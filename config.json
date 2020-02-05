@@ -1,0 +1,30 @@
+{
+	"urls": {
+		"open main page": {
+			"path": "/",
+			"controller": "Dmitry\\Music\\Controllers\\IndexController::index",
+			"method": "GET"
+		},
+
+		"open registration page": {
+			"path": "/reg",
+			"controller": "Dmitry\\Music\\Controllers\\AccountController::index",
+			"method": "GET"
+		},
+
+		"add user": {
+			"path": "/reg",
+			"controller": "Dmitry\\Music\\Controllers\\AccountController::addUser",
+			"method": "POST"
+		}
+
+	},
+
+	"db": {
+		"server": "127.0.0.1",
+		"dbname": "diplom",
+		"user": "dima",
+		"pass": "1",
+		"charset": "utf8"
+	}
+}

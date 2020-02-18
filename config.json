@@ -1,10 +1,11 @@
 {
 	"urls": {
-		"open main page": {
-			"path": "/",
-			"controller": "Dmitry\\Music\\Controllers\\IndexController::index",
-			"method": "GET"
-		},
+
+    	"main": {
+        "path": "/",
+        "controller": "Dmitry\\Music\\Controllers\\IndexController::index",
+        "method": "GET"
+    	},
 
 		"open registration page": {
 			"path": "/reg",
@@ -12,13 +13,43 @@
 			"method": "GET"
 		},
 
+		"my": {
+			"path": "/my",
+			"controller": "Dmitry\\Music\\Controllers\\AccountController::my",
+			"method": "GET"
+		},
+
 		"add user": {
 			"path": "/reg",
 			"controller": "Dmitry\\Music\\Controllers\\AccountController::addUser",
 			"method": "POST"
-		}
+		},
 
-	},
+		 "authorisation": {
+         "path": "/login",
+         "controller": "Dmitry\\Music\\Controllers\\AccountController::login",
+         "method": "POST"
+    	},
+
+    	 "logout": {
+         "path": "/logout",
+         "controller": "Dmitry\\Music\\Controllers\\AccountController::logout",
+         "method": "GET"
+    	},
+
+    	 "trackload": {
+         "path": "/trackload",
+         "controller": "Dmitry\\Music\\Controllers\\AccountController::trackload",
+         "method": "POST"
+    	},
+
+    	 "delete": {
+         "path": "/my?del={\\d+}",
+         "controller": "Dmitry\\Music\\Controllers\\IndexController::delete",
+         "method": "GET"
+    	}
+
+},
 
 	"db": {
 		"server": "127.0.0.1",

@@ -1,6 +1,7 @@
 <?php
 
 namespace Dmitry\Music\Core;
+use Dmitry\Music\Core\DBConnection;
 
 
 class Application

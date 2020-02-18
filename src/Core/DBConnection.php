@@ -1,6 +1,7 @@
 <?php
 
 namespace Dmitry\Music\Core;
+use Dmitry\Music\Models\AccountModel;
 
 use PDO;
 
@@ -49,11 +50,11 @@ class DBConnection
         return new PDO($dsn, $user, $pwd, $options);
     }
 
-    public function queryAll($sql){
-        $statement = $this->connection->query($sql);
-        if (!$statement) return false;
-        return $statement->fetchAll();
-    }
+    // public function queryAll($sql){
+    //     $statement = $this->connection->query($sql);
+    //     if (!$statement) return false;
+    //     return $statement->fetchAll();
+    // }
 
     public function exec($sql){
         return $statement = $this->connection->exec($sql);
@@ -73,6 +74,16 @@ class DBConnection
         $statement = $this->connection->prepare($sql);
         $statement->execute($params);
     }
+
+        public function queryAll($sql){
+        $statement = $this->connection->query($sql);
+        if (!$statement) return false;
+        return $statement->fetchAll();
+    }
+
+    // public function lastInsertId(){
+    //     return $this->connection->lastInsertId();
+    // }
 
 
 }

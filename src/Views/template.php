@@ -8,27 +8,58 @@
 <body>
 	<header class="main-style size-80 flex beetween alcntr">
 		<div class="flex">
+
 			<a href="/">Главная</a>
+
+			<? if(isset($_SESSION['login'])): ?>
+			<a href="/my">Личный кабинет</a>
+			<? endif; ?>
+
 		</div>
 
+<!-- ============================================= -->
 
-		<form action="#" method="POST">
-			<div>
-				<label for="login">Введите логин<input type="text" id="login"></label>
-				
-				
-			</div>
+		<? if(isset($_SESSION['login'])): ?>
+			
+			<form action="/logout" method="GET">
+				<input type="submit" value="Выйти">
+			</form>
 
-			<div>	
-				<label for="psw">Введите пароль<input type="password" id="psw"></label>
+		<? else: ?>	
+			<form name="authorization">
+				<div>
+					<label for="login">Введите логин<input type="text" id="login" name="login"></label>
 				
-			</div>
-			<input type="submit" value="Войти">
-			<button><a href="/reg">Зарегистрироваться</a></button>
-		</form>
+				
+				</div>
+
+				<div>	
+					<label for="psw">Введите пароль<input type="password" id="psw" name="pwd"></label>
+				
+				</div>
+				<input type="submit" value="Войти">
+				<button><a href="/reg">Зарегистрироваться</a></button>
+			</form>
+
+		<? endif; ?>
+
+<!-- ============================================ -->
 		
 	</header>
-	<!-- <? include_once $loading; ?> -->
+
+	<!-- ================================= -->
+	 
+            <? if(isset($_SESSION['login'])): ?>
+                    			
+
+		<? include_once '../src/Views/account/trackform.php'; ?>
+
+			</div>
+			
+			
+			
+        	<? endif; ?>
+    <!-- ========================================= -->
 
 	<? include_once $content; ?>
 
@@ -41,5 +72,6 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	</footer>
 	
+	<script src="/static/js/authorization.js"></script>
 </body>
 </html>

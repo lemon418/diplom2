@@ -196,3 +196,8 @@ img {
 @media screen and (max-width: 560px) {
     .range {display: none;}
 }
+
+.lcolor {
+	color: white;
+	font: bold 22px Arial;
+}

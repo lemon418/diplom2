@@ -38,11 +38,35 @@ class IndexController extends Controller
 	}
 
     public function delete(Request $request) {
-        $id = $request->get();
-        $idp = $id['del'];
+
+        $id = $request->post();
+        $idp = $id['id'];
         $this->track_model->delete($idp);
-        header("Location: main/main.php");
+        $track = $this->track_model->getMyTrack();
+        $content = 'account/my.php';
+            $data = [
+            'title'=>'Главная',
+            'mytracks' => $track,
+        ];
+        return $this->generateResponse($content, $data);
     }
+
+        public function vote(Request $request) {
+        $id = $request->post();
+        $voice = $id['vote'];
+        $idp = $id['id'];
+        $this->track_model->vote($voice, $idp);
+        $content = 'main/main.php';
+        $rate = $this->track_model->getRating();
+        $track = $this->track_model->getAllTracks();
+        $data = [
+            'title'=>'Главная',
+            'track' => $track,
+            'rate' => $rate
+        ];
+        return $this->generateResponse($content, $data);
+    }
+
 
 
 }

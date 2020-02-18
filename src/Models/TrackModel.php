@@ -14,7 +14,7 @@ class TrackModel
     }
 
     public function getAllTracks() {
-        $sql = 'SELECT name, link FROM tracks';
+        $sql = 'SELECT id_track, name, link FROM tracks';
         return $this->db->queryAll($sql);
 
     }
@@ -35,9 +35,20 @@ class TrackModel
     }
 
     public function delete($id) {
-
  		$sql = 'DELETE FROM tracks WHERE id_track = :id;';
  		$params = ['id' => $id];
     	return $this->db->executeSql($sql, $params);
     }
+
+
+
+    public function vote($voice, $idtrack) {
+ 		$sql = 'UPDATE rate SET rate = rate + :voice WHERE idtrack = :idt;';
+ 		$params = [
+ 			'voice' => $voice,	
+ 			'idt' => $idtrack];
+
+    	return $this->db->executeSql($sql, $params);
+    }
+
 }

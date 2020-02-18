@@ -7,12 +7,14 @@
 </head>
 <body>
 	<header class="main-style size-80 flex beetween alcntr">
-		<div class="flex">
-
-			<a href="/">Главная</a>
-
+		<div class="flex1">
+            <div class="margin link"> 
+				<a href="/">Главная</a>
+			</div>	
 			<? if(isset($_SESSION['login'])): ?>
-			<a href="/my">Личный кабинет</a>
+			<div class="margin link"> 	
+				<a href="/my">Личный кабинет</a>
+			</div>
 			<? endif; ?>
 
 		</div>
@@ -20,7 +22,7 @@
 <!-- ============================================= -->
 
 		<? if(isset($_SESSION['login'])): ?>
-			
+			<img src="img/rty.jpg" alt="img">
 			<form action="/logout" method="GET">
 				<input type="submit" value="Выйти">
 			</form>

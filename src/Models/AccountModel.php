@@ -90,21 +90,28 @@ VALUES (:login, :psw, :email)";
         $sql = 'INSERT INTO tracks(name, hash_name, link, id_user) VALUES (:name, :hash_name, :dir, (SELECT idusers FROM users WHERE login = :login))';
 
         $dir = "static/tracks/" . $hash_name;
-
-        $login = $_SESSION['login'];
-        
-
+        $login = $_SESSION['login'];        
         $track_params = [
                         'name'=>$name,    
                         'hash_name' => $hash_name,
                         'dir' => $dir,
                         'login' => $login
                         ];
-        $this->db->executeSql($sql, $track_params);
-        // $id = $this->db->lastInsertId();
 
+        try {
+            $this->db->getConnection()->beginTransaction();                
+            $this->db->executeSql($sql, $track_params);  
+            $id = $this->db->lastInsertId();
+            $sql_2 = 'INSERT INTO rate (idtrack, rate) VALUES ((SELECT id_track FROM tracks WHERE id_track = :id), 0)';
+
+            $this->db->executeSql($sql_2, ['id'=>$id]);
+        $this->db->getConnection()->commit();
+        }
+        catch (Exception $e){
+            $this->db->rollback();
+            return "Ошибка добавления трека";
+        }
         // rateForNewTrack($id);
-        // var_dump($id);
 
     }
 }

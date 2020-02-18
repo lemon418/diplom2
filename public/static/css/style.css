@@ -201,3 +201,14 @@ img {
 	color: white;
 	font: bold 22px Arial;
 }
+
+.margin {
+	margin: 10px;
+	padding: 10px;
+}
+
+.link {
+	background: #0c0;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #ddd;
+}

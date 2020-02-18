@@ -44,9 +44,15 @@
     	},
 
     	 "delete": {
-         "path": "/my?del={\\d+}",
+         "path": "/delete",
          "controller": "Dmitry\\Music\\Controllers\\IndexController::delete",
-         "method": "GET"
+         "method": "POST"
+    	},
+
+    	 "vote": {
+         "path": "/vote",
+         "controller": "Dmitry\\Music\\Controllers\\IndexController::vote",
+         "method": "POST"
     	}
 
 },

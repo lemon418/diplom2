@@ -81,9 +81,9 @@ class DBConnection
         return $statement->fetchAll();
     }
 
-    // public function lastInsertId(){
-    //     return $this->connection->lastInsertId();
-    // }
+    public function lastInsertId(){
+        return $this->connection->lastInsertId();
+    }
 
 
 }

@@ -1,9 +1,13 @@
 <div class="container head">
 	<h2>Моя музыка</h2>
-
+				<!-- <? var_dump($mytracks); ?>		 -->
 		<ol>
 			<? foreach ($mytracks as $track): ?>
-				<li><? echo  $track['name']; ?> <br><a href="/my?del=<?= $track['id_track'] ?>">удалить</a></li><br>
+			<form action="/delete" method="POST">
+				<li><? echo  $track['name']; ?> </li>
+				<input type="hidden" value="<? echo $track['id_track']; ?>" name="id">
+				<input type="submit" value="удалить">
+			</form>		
 			<? endforeach; ?> 
 		</ol>
 </div>

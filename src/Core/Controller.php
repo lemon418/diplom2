@@ -32,7 +32,7 @@ class Controller
     // метод создает ответ (объект Response), устанавливает тело ответа (body)
     // и возвращает сформированный объект
     protected function
-    generateResponse($content, array $data,
+    generateResponse($content, array $data=[],
                      $template = 'template.php'){
         $response = new Response();
         $response->setBody(

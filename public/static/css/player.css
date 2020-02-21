@@ -1,0 +1,45 @@
+.pl_sound {
+	display: none;
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+	width: 300px;
+	height: 160px;
+	background: #550080;
+	z-index: 1;
+	border-radius: 20px;
+	text-align: center;
+	opacity: 0.8;
+
+}
+
+.pl_closer {
+	position: relative;
+	top: 0;
+	padding: 10px;
+	color: #fff;
+	font: 23px bold Arial; 
+	background: #0000cc;
+	border-radius: 20px;
+	z-index: 2;
+}
+
+.pl_frame {
+	position: relative;
+	top: -60px;
+	border: none; 
+}
+
+.pl_show {
+	display: none;
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+	font: 20px bold San-Serif;
+	color: #fff;
+	padding: 10px;
+	z-index: 1;
+	border-radius: 10px;
+	opacity: 0.8;
+	background: #550080;
+}

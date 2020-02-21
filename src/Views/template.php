@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1/0">
 	<title><?php echo $title; ?></title>
 	<link rel="stylesheet" href="..\static\css\style.css">
+	<link rel="stylesheet" href="..\static\css\player.css">
 </head>
 <body>
-	<header class="main-style size-80 flex beetween alcntr">
-		<div class="flex1">
-            <div class="margin link"> 
-				<a href="/">Главная</a>
-			</div>	
+	<header class="main-style size-80 flex1 alcntr">
+		<div class="flex1 txtcenter part1">
+			<div class="margin link flex alcntr around"> 
+           		 <a href="/">           		
+						Главная						
+				</a>
+			</div>
 			<? if(isset($_SESSION['login'])): ?>
-			<div class="margin link"> 	
+			<div class="margin link flex around"> 	
 				<a href="/my">Личный кабинет</a>
 			</div>
 			<? endif; ?>
@@ -20,28 +24,45 @@
 		</div>
 
 <!-- ============================================= -->
-
 		<? if(isset($_SESSION['login'])): ?>
-			<img src="img/rty.jpg" alt="img">
-			<form action="/logout" method="GET">
-				<input type="submit" value="Выйти">
-			</form>
 
+		<div class="flex alcntr part1 end">
+			<div>
+				<img src="img/rty.jpg" alt="" class="block">
+			</div>
+			<div>
+				<form action="/logout" method="GET" class="block">
+				<input type="submit" value="Выйти" class="logout">
+				</form>
+			</div>
+		</div>
 		<? else: ?>	
+
+		<div class="part1">
 			<form name="authorization">
-				<div>
-					<label for="login">Введите логин<input type="text" id="login" name="login"></label>
+				<div class="flex1">
+					<div class="part1 flex end">	<label for="login">Введите логин</label></div>
+					<div class="part1">	<input type="text" id="login" name="login"></div>
 				
 				
 				</div>
 
-				<div>	
-					<label for="psw">Введите пароль<input type="password" id="psw" name="pwd"></label>
+				<div class="flex padding">	
+					<div class="part1 flex end"><label for="psw">Введите пароль</label></div>
+					<div class="part1"><input type="password" id="psw" name="pwd"></div>
 				
 				</div>
-				<input type="submit" value="Войти">
-				<button><a href="/reg">Зарегистрироваться</a></button>
+				<div  class="flex padding">
+					<div class="part2"></div>
+					<div class="part1"><input class="button" type="submit" value="Войти"></div>
+				</div>
+				<div  class="flex padding">
+					<div class="part2"></div>
+					<div class="part1"><button class="button"><a href="/reg">Регистрация</a></button>
+					</div>
+				</div>
 			</form>
+		</div>	
 
 		<? endif; ?>
 
@@ -53,27 +74,27 @@
 	 
             <? if(isset($_SESSION['login'])): ?>
                     			
-
 		<? include_once '../src/Views/account/trackform.php'; ?>
 
-			</div>
-			
-			
+			</div>		
 			
         	<? endif; ?>
     <!-- ========================================= -->
+    <? include_once '../src/Views/account/sound.php'; ?>
 
 	<? include_once $content; ?>
 
-	<footer class="main-style size-80">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	<footer class="main-style size-80 txtcenter">
+<span class="range">Записаться на курсы создания электронной музыки Вы можете:
+<ul> 
+	<li>по телефону: +7 (950) 555 63 90.</li>
+	<li>напсать нам на email: musicmaker@spb.ru.</li>
+</ul>
+</span>
+
 	</footer>
 	
 	<script src="/static/js/authorization.js"></script>
+	<script src="/static/js/sound.js"></script>
 </body>
 </html>

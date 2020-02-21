@@ -1,18 +1,18 @@
 			<div class="list">
 
-				<h4>Загрузите файл или несколько файлов</h4>
+				<h4>Загрузите файл</h4>
 
 				<div class="form">
 					<form action="/trackload" method="POST" enctype="multipart/form-data">
-						<div>
+						<div class="margin2 submit">
 							<input name="track" type="file" accept="audio/*"  required>
 						</div>
-						<div>
-							<input name="name" type="text" value="Название" required>
+						<div class="margin2">
+							<input name="name" type="text" placeholder="Название"  required>
 						</div>
 
-						<div class="submit">
-							<input type="submit" value="Отправить файл">
+						<div class="margin2">
+							<input type="submit" value="Отправить файл"  class="submit" >
 						</div>
 					</form>
 				</div>

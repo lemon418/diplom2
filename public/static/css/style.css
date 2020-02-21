@@ -2,7 +2,8 @@ body {
 	font-family: Verdana;
 	font-size: 15px; 
 	color: #fff; 
-	background: #00394d;
+	background: #001a1a;
+
 }
 
 .main-style {
@@ -21,6 +22,7 @@ body {
 .size-80 {
 	width: 80%;
 	margin: 10px auto;
+	flex-wrap: wrap;
 }
 
 /*.logo {
@@ -34,7 +36,6 @@ body {
 
  .flex1 {
  	display: flex;
- 	justify-content: space-around;
  	flex-wrap: wrap;
  }
 
@@ -42,6 +43,9 @@ body {
 	justify-content: space-between;
 }
 
+.around {
+	justify-content: space-around;
+}
 .alcntr {
 	align-items: center;
 }
@@ -65,7 +69,9 @@ body {
 header a {
 	text-decoration: none;
 	font: 1.3em bold Arial;
-	color: #ffffff;
+	color: #004d4d;
+	padding: 10px;
+	text-shadow: 0px 0px 2px #006652; 
 	
 }
 
@@ -81,6 +87,7 @@ header a {
 
 h1, h4 {
 	margin: 0px;
+	padding: 10px 10px;
 }
 
 .menu {
@@ -97,7 +104,8 @@ h1, h4 {
 
 .list {
 	margin: 10px auto;
-	width: 300px;
+	max-width: 300px;
+	min-width: 200px;
 	height: 150px;
 	background: #009999;
 	border-radius: 20px;
@@ -106,11 +114,11 @@ h1, h4 {
 
 .form {
 	/*background: #00b3b3;*/
-	position: absolute;
-	text-align: left;
+	/*position: absolute;*/
+	text-align: center;
 }
 
- .submit {
+ .margin2 {
  	margin-top: 10px;
  }
 
@@ -130,12 +138,18 @@ h1, h4 {
  	position: relative;	
 }
 
+.part1 {
+	flex: 1;
+
+}.part2 {
+	flex: 1;
+}
 .image {
-	min-width: 100px;
-	max-width: 210px;
-	height: auto;
+	min-width: 120px;
+	max-height: 120px;
 	margin: 10px;
 	text-align: center;
+	color: #1aff8c;
 }
 
 .head {
@@ -143,7 +157,7 @@ h1, h4 {
 }
 
 .block {
-	box-shadow: -5px 5px 20px;
+	box-shadow: -5px 5px 20px #1aff8c;
 }
 
 img {
@@ -153,6 +167,7 @@ img {
 .range {
 	font: 1.3em bold Arial;
 	color: #e6ffe6;
+
 }
 
 /*for data page*/
@@ -172,14 +187,14 @@ img {
 	margin: 0 auto;
 }
 .button {
+    min-width: 120px;
+}
+
+.txtcenter {
 	text-align: center;
 }
 
-.logo {
-	text-align: center;
-}
-
-.logo img {
+img {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
@@ -190,25 +205,116 @@ img {
 	display: flex;
 	justify-content: space-between;
 	margin: 10px;
-
-}
-
-@media screen and (max-width: 560px) {
-    .range {display: none;}
 }
 
 .lcolor {
 	color: white;
 	font: bold 22px Arial;
+	text-decoration: none;
+	
 }
 
 .margin {
 	margin: 10px;
-	padding: 10px;
+	/*padding: 10px;*/
 }
 
 .link {
-	background: #0c0;
+	background: #66ff99;
 	border-radius: 10px;
 	box-shadow: 5px 5px 5px #ddd;
+	flex: 1;
+	max-width: 200px;
+}
+
+.logout {
+	width: 100px;
+	height: 50px;
+	font: 23px bold Arial;
+	background-color: #80ffbf;
+	border-radius: 10px;
+}
+
+.block {
+	display: block;
+}
+
+.padding {
+	padding-top: 10px;
+}
+.relative {
+	position: relative;
+}
+.absolute {
+	display: block;
+	position: absolute;
+	top: 40px;
+	left: -40px;
+	right: -40px;
+}
+
+.musbox {
+	width: 220px;
+	height: 129px;
+}
+
+.vote {
+	border-radius: 10px 0px;
+	height: 25px;
+	background: #ffa64d;
+}
+
+.voteform {
+	border-radius: 20px 5px;
+	/*background: #ffbf80;*/
+	opacity: 0.9;
+	color: #00ffff;
+}
+
+.submit {
+	background: #00cccc;
+	border-radius: 20px 5px;
+	padding: 5px;
+}
+
+.rate {
+	color: #ff704d;
+	text-align: center;
+	border-bottom: 3px solid #00e6e6;
+	font: 23px bold Arial;
+	max-width: 80px;
+	margin: 0 auto;
+}
+
+.trname {
+	color: #00ffff;
+}
+.sum {
+	color: #ffa64d;
+}
+
+.before::before {
+	content: "";
+	background: url(../img/note2.png);
+	background-size: contain;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	
+}
+
+
+@media screen and (max-width: 560px) {
+    img, .range {display: none;}
+	.flex1 {justify-content: space-around;}
+	.part2 {flex: 0;}
+	.button {
+		width: 80%;
+		margin: auto;
+		height: 40px;
+	}
+	.end {
+ 	justify-content: space-around;
+ }
+
 }
